@@ -55,7 +55,7 @@ export const options = {
             },
             async authorize(credentials) {
                 try {
-                    const foundUser = User.findOne({email: credentials.email}).lean().exec();
+                    const foundUser = await User.findOne({email: credentials.email}).lean().exec();
 
                     if(foundUser) {
                         console.log("User exists")

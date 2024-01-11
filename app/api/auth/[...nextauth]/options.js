@@ -67,7 +67,7 @@ export const options = {
                             console.log("Good");
                             delete foundUser.password;
                             let userRole = "unatorised";
-                                if(credentials?.email == "bob@bob.com") {
+                                if(credentials?.email == "zzzz@zzzz.zzzz") {
                                     userRole = "admin";
                                 }
                             return {...foundUser, email: credentials.email,  role: userRole,}

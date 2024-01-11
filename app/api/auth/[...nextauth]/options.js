@@ -59,7 +59,7 @@ export const options = {
 
                     if(foundUser) {
                         console.log("User exists")
-                        const match = bcrypt.compare(
+                        const match = await bcrypt.compare(
                             credentials.password, 
                             foundUser.password
                             );

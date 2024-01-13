@@ -3,7 +3,6 @@
 import { useRouter } from "next/navigation"
 import React, { useState } from "react"
 
-import '@/(assets)/css/userform.css'
 
 const UserForm = () => {
     const router = useRouter();
@@ -44,47 +43,58 @@ return(
         <form 
             onSubmit={handleSubmit}
             method="post"
-            className="userForm"
+            className="space-y-4 lg:space-y-0"
         >
-            <h1>Create New User</h1>
-            <div className="userinput"></div>
-            <label>Full Name</label>
-            <input
-                id="name" 
-                name="name"
-                type="text" 
-                onChange={handleChange} 
-                required={true} 
-                value={formData.name} 
-                className=""
-            />
+            <h1 className="text-xl font-bold">Create New User</h1>
+            <div className="flex flex-col pb-3 space-y-4 lg:space-y-0 lg:flex-row lg:space-x-4">
 
-            <label>Email</label>
-            <input 
-                id="email" 
-                name="email"
-                type="text" 
-                onChange={handleChange} 
-                required={true} 
-                value={formData.email} 
-                className="userinput"
-            />
+                <div className="flex-grow">
+                    <label className="mb-2 block">Full Name</label>
+                    <input
+                        id="name" 
+                        name="name"
+                        type="text" 
+                        onChange={handleChange} 
+                        required={true} 
+                        value={formData.name} 
+                        className="border border-gray-300 p-2 rounded w-full"
+                    />
+                </div>
+                <div className="flex-grow">
+                    <label className="mb-2 block">Email</label>
+                    <input 
+                        id="email" 
+                        name="email"
+                        type="text" 
+                        onChange={handleChange} 
+                        required={true} 
+                        value={formData.email} 
+                        className="border border-gray-300 p-2 rounded w-full"
+                    />
+                </div>
+                <div className="flex-grow">
+                    <label className="mb-2 block">Password</label>
+                    <input 
+                        id="password" 
+                        name="password"
+                        type="password" 
+                        onChange={handleChange} 
+                        required={true} 
+                        value={formData.password} 
+                        className="border border-gray-300 p-2 rounded w-full"
+                    />
+                </div>
 
-            <label>Password</label>
-            <input 
-                id="password" 
-                name="password"
-                type="password" 
-                onChange={handleChange} 
-                required={true} 
-                value={formData.password} 
-                className="userinput"
-            />
-            <button type="submit" 
+            </div>
+            <button 
+                type="submit" 
                 value="Create User"
-                className="usersubmit">
-                submit
+                className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded self-end"
+            >
+                Submit
             </button> 
+
+            
         </form>
         <p className="text-red-500">{errorMessage}</p>
     </>
